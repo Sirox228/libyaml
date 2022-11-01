@@ -4,7 +4,6 @@ on: [workflow_dispatch]
 jobs:
   build:
     runs-on: ubuntu-latest
-    continue-on-error: true
     strategy:
       matrix:
         arch: [armv7-a, armv8-a, x86-android, x86_64-android, x86_64-linux]
@@ -25,8 +24,11 @@ jobs:
           sudo chmod -R 777 *
           dos2unix build.sh
       - name: Build
+        continue-on-error: true
         run: ./build.sh ${{matrix.arch}}
       - name: Log
+        continue-on-error: true
+        if: true
         run: cd libyaml && cat config.log
       - uses: actions/upload-artifact@v2
         with:
