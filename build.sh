@@ -14,7 +14,7 @@ case "$1" in
         make clean
         ;;
     armv7-a)
-        export CFLAGS="-O2 -mfloat-abi=softfp -mfpu=neon -march=armv7-a"
+        export CFLAGS="-O2"
         export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/$HOST_OS
         export TARGET=armv7a-linux-androideabi
         export API=19
@@ -30,7 +30,7 @@ case "$1" in
         make
         ;;
     armv8-a)
-        export CFLAGS="-O2 -mfloat-abi=softfp -mfpu=neon -march=armv8-a"
+        export CFLAGS="-O2"
         export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/$HOST_OS
         export TARGET=aarch64-linux-android
         export API=21
@@ -46,7 +46,7 @@ case "$1" in
         make
         ;;
     x86-android)
-        export CFLAGS="-O2 -mfloat-abi=softfp -march=i686"
+        export CFLAGS="-O2"
         export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/$HOST_OS
         export TARGET=i686-linux-android
         export API=19
@@ -62,7 +62,7 @@ case "$1" in
         make
         ;;
     x86_64-android)
-        export CFLAGS="-O2 -mfloat-abi=softfp"
+        export CFLAGS="-O2"
         export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/$HOST_OS
         export TARGET=x86_64-linux-android
         export API=21
