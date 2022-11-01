@@ -1,0 +1,29 @@
+# just a simple workflow that clones repo with library and runs build.sh
+name: Build
+on: [workflow_dispatch]
+jobs:
+  buildArm:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch: [armv7-a, armv8-a, x86-android, x86_64-android, x86_64-linux]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup
+        run: |
+          sudo apt update -y
+          sudo apt upgrade -y
+          sudo apt install make -y
+          sudo apt install automake -y
+          sudo apt install autoconf -y
+          sudo apt install libtool -y
+          sudo apt install build-essential -y
+          sudo apt install gcc-multilib -y
+          git clone https://github.com/yaml/libyaml
+          sudo chmod -R 777 *
+      - name: Build
+        run: ./build.sh ${{matrix.arch}}
+      - uses: actions/upload-artifact@v2
+        with:
+          name: libyaml-${{matrix.arch}}
+          path: libyaml/src/libyaml.a
