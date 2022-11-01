@@ -28,7 +28,7 @@ jobs:
         run: ./build.sh ${{matrix.arch}}
       - name: Log
         continue-on-error: true
-        run: cd libyaml && ls config.log
+        run: cd libyaml && cat config.log
       - uses: actions/upload-artifact@v2
         with:
           name: libyaml-${{matrix.arch}}
