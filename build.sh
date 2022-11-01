@@ -17,7 +17,7 @@ case "$1" in
         export CFLAGS="-O2 -mfloat-abi=softfp -mfpu=neon -march=armv7"
         export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/$HOST_OS
         export TARGET=armv7a-linux-androideabi
-        export API=19
+        export API=21
         export AR=$TOOLCHAIN/bin/llvm-ar
         export CC=$TOOLCHAIN/bin/$TARGET$API-clang
         # if needed, you can try setting this as $CC or you can steal GAS AS from old ndk such as r15c and point to it there
@@ -33,7 +33,7 @@ case "$1" in
         export CFLAGS="-O2 -mfloat-abi=softfp -mfpu=neon -march=armv8"
         export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/$HOST_OS
         export TARGET=aarch64-linux-android
-        export API=19
+        export API=21
         export AR=$TOOLCHAIN/bin/llvm-ar
         export CC=$TOOLCHAIN/bin/$TARGET$API-clang
         # if needed, you can try setting this as $CC or you can steal GAS AS from old ndk such as r15c and point to it there
@@ -49,7 +49,7 @@ case "$1" in
         export CFLAGS="-O2 -mfloat-abi=softfp -march=i686"
         export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/$HOST_OS
         export TARGET=i686-linux-android
-        export API=19
+        export API=21
         export AR=$TOOLCHAIN/bin/llvm-ar
         export CC=$TOOLCHAIN/bin/$TARGET$API-clang
         # if needed, you can try setting this as $CC or you can steal GAS AS from old ndk such as r15c and point to it there
@@ -65,7 +65,7 @@ case "$1" in
         export CFLAGS="-O2 -mfloat-abi=softfp -march=i686"
         export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/$HOST_OS
         export TARGET=x86_64-linux-android
-        export API=19
+        export API=21
         export AR=$TOOLCHAIN/bin/llvm-ar
         export CC=$TOOLCHAIN/bin/$TARGET$API-clang
         # if needed, you can try setting this as $CC or you can steal GAS AS from old ndk such as r15c and point to it there
