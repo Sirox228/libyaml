@@ -62,7 +62,7 @@ case "$1" in
         make
         ;;
     x86_64-android)
-        export CFLAGS="-O2 -mfloat-abi=softfp -march=x86_64"
+        export CFLAGS="-O2 -mfloat-abi=softfp"
         export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/$HOST_OS
         export TARGET=x86_64-linux-android
         export API=21
@@ -79,6 +79,7 @@ case "$1" in
         ;;
     x86_64-linux)
         export CFLAGS="-O2"
+        ./configure --host $HOST_OS
         make
         ;;
     *)
