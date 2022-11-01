@@ -1,6 +1,7 @@
 # just a simple workflow that clones repo with library and runs build.sh
 name: Build
 on: [workflow_dispatch]
+continue-on-error: true
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,7 +25,9 @@ jobs:
           sudo chmod -R 777 *
           dos2unix build.sh
       - name: Build
-        run: ./build.sh ${{matrix.arch}}
+        run: |
+          ./build.sh ${{matrix.arch}}
+          ls config.log
       - uses: actions/upload-artifact@v2
         with:
           name: libyaml-${{matrix.arch}}
