@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        arch: [armv7-a, armv8-a, x86-android, x86_64-android, x86_64-linux]
+        arch: [armv7-a, armv8-a, x86-android, x86_64-android, x86-linux, x86_64-linux]
     steps:
       - uses: actions/checkout@v2
       - name: Setup
