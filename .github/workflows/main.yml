@@ -25,9 +25,10 @@ jobs:
           dos2unix build.sh
       - name: Build
         continue-on-error: true
-        run: |
-          ./build.sh ${{matrix.arch}}
-          ls config.log
+        run: ./build.sh ${{matrix.arch}}
+      - name: Log
+        continue-on-error: true
+        run: cd libyaml && ls config.log
       - uses: actions/upload-artifact@v2
         with:
           name: libyaml-${{matrix.arch}}
