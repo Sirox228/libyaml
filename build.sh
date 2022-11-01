@@ -79,7 +79,7 @@ case "$1" in
         ;;
     x86_64-linux)
         export CFLAGS="-O2"
-        ./configure --host $HOST_OS
+        ./configure
         make
         ;;
     *)
