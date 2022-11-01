@@ -85,3 +85,4 @@ case "$1" in
         echo "you didn't specify an architecture or specified invalid one (available options: armv7-a, armv8-a, x86-android, x86_64-android, x86_64-linux)"
         exit 1
         ;;
+esac
