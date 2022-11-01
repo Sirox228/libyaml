@@ -2,7 +2,7 @@
 name: Build
 on: [workflow_dispatch]
 jobs:
-  buildArm:
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
