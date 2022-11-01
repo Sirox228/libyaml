@@ -28,13 +28,5 @@ jobs:
         run: ./build.sh ${{matrix.arch}}
       - uses: actions/upload-artifact@v2
         with:
-          name: makefileroot-${{matrix.arch}}
-          path: libyaml/Makefile
-      - uses: actions/upload-artifact@v2
-        with:
-          name: makefilesrc-${{matrix.arch}}
-          path: libyaml/src/Makefile
-      - uses: actions/upload-artifact@v2
-        with:
           name: libyaml-${{matrix.arch}}
           path: libyaml/src/.libs/libyaml.a
