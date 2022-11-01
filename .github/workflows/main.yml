@@ -19,8 +19,10 @@ jobs:
           sudo apt install libtool -y
           sudo apt install build-essential -y
           sudo apt install gcc-multilib -y
+          sudo apt install dos2unix -y
           git clone https://github.com/yaml/libyaml
           sudo chmod -R 777 *
+          dos2unix build.sh
       - name: Build
         run: ./build.sh ${{matrix.arch}}
       - uses: actions/upload-artifact@v2
